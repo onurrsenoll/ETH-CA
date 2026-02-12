@@ -1,0 +1,1431 @@
+/* ============================================================
+   ARAÇ DEĞER KAYBI - BAĞIMSIZ MODÜL CSS
+   ============================================================ */
+
+/* ===== LAYOUT ===== */
+.vl-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.vl-main {
+  flex: 1;
+  margin-left: 270px;
+  padding: 1.5rem 2rem;
+  overflow-x: auto;
+  background: #f0f4f8;
+}
+
+/* ===== SIDEBAR ===== */
+.vl-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 270px;
+  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.vl-sidebar-header {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  color: #5eead4;
+}
+
+.vl-sidebar-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.vl-sidebar-subtitle {
+  font-size: 0.72rem;
+  opacity: 0.5;
+  color: white;
+}
+
+.vl-sidebar-nav {
+  flex: 1;
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.vl-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.vl-sidebar-link:hover {
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+
+.vl-sidebar-link.active {
+  background: rgba(94,234,212,0.12);
+  color: #5eead4;
+  font-weight: 600;
+}
+
+.vl-sidebar-footer {
+  padding: 0.75rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.vl-back-link {
+  font-size: 0.82rem !important;
+  color: rgba(255,255,255,0.4) !important;
+}
+
+.vl-back-link:hover {
+  color: white !important;
+}
+
+/* ===== PAGE HEADERS ===== */
+.vl-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.vl-page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.vl-page-subtitle {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+/* ===== BUTTONS ===== */
+.vl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.vl-btn-primary {
+  background: #0f766e;
+  color: white;
+}
+
+.vl-btn-primary:hover {
+  background: #0d6560;
+}
+
+.vl-btn-secondary {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.vl-btn-secondary:hover {
+  background: #cbd5e1;
+}
+
+.vl-btn-danger {
+  background: #ef4444;
+  color: white;
+}
+
+.vl-btn-danger:hover {
+  background: #dc2626;
+}
+
+.vl-btn-success {
+  background: #10b981;
+  color: white;
+}
+
+.vl-btn-success:hover {
+  background: #059669;
+}
+
+.vl-btn-warning {
+  background: #f59e0b;
+  color: white;
+}
+
+.vl-btn-warning:hover {
+  background: #d97706;
+}
+
+.vl-btn-full {
+  width: 100%;
+  justify-content: center;
+  padding: 0.85rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.vl-btn-sm {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+.vl-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #94a3b8;
+  transition: all 0.2s;
+}
+
+.vl-btn-icon:hover {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.vl-btn-icon.danger:hover {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+/* ===== NOTIFICATION ===== */
+.vl-notification {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  animation: vlSlideIn 0.3s ease;
+}
+
+.vl-notification.success {
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.vl-notification.error {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+@keyframes vlSlideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== CARD ===== */
+.vl-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  border: 1px solid #e2e8f0;
+  padding: 1.5rem;
+}
+
+.vl-card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ===== FORM ===== */
+.vl-form-group {
+  margin-bottom: 1rem;
+}
+
+.vl-form-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 0.3rem;
+}
+
+.vl-form-input {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  color: #1e293b;
+  background: white;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.vl-form-input:focus {
+  outline: none;
+  border-color: #0d9488;
+  box-shadow: 0 0 0 3px rgba(13,148,136,0.1);
+}
+
+.vl-form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.vl-form-row .vl-form-group {
+  flex: 1;
+}
+
+.vl-form-textarea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  color: #1e293b;
+  background: white;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  min-height: 80px;
+  resize: vertical;
+}
+
+.vl-form-textarea:focus {
+  outline: none;
+  border-color: #0d9488;
+  box-shadow: 0 0 0 3px rgba(13,148,136,0.1);
+}
+
+/* ============================================================
+   RUHSAT KARTI (Araç Tescil Belgesi)
+   ============================================================ */
+.ruhsat-card {
+  background: linear-gradient(135deg, #f0fdfa 0%, #e6fffa 50%, #f0fdf4 100%);
+  border: 2px solid #0f766e;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(15,118,110,0.15), inset 0 1px 0 rgba(255,255,255,0.8);
+  position: relative;
+}
+
+.ruhsat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230f766e' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ruhsat-header {
+  background: linear-gradient(135deg, #0f766e 0%, #0d9488 50%, #14b8a6 100%);
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ruhsat-header-flag {
+  width: 36px;
+  height: 26px;
+  background: #dc2626;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ruhsat-header-flag::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.ruhsat-header-text {
+  color: white;
+}
+
+.ruhsat-header-text h3 {
+  font-size: 0.65rem;
+  font-weight: 400;
+  opacity: 0.85;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ruhsat-header-text h2 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.ruhsat-body {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ruhsat-row {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.ruhsat-field {
+  flex: 1;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(15,118,110,0.15);
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  transition: all 0.2s;
+}
+
+.ruhsat-field:focus-within {
+  border-color: #0f766e;
+  background: white;
+  box-shadow: 0 0 0 2px rgba(15,118,110,0.1);
+}
+
+.ruhsat-field-code {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: white;
+  background: #0f766e;
+  padding: 0.05rem 0.35rem;
+  border-radius: 3px;
+  margin-right: 0.35rem;
+  letter-spacing: 0.5px;
+}
+
+.ruhsat-field-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: #0f766e;
+  margin-bottom: 0.15rem;
+  display: flex;
+  align-items: center;
+}
+
+.ruhsat-field input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #0f172a;
+  padding: 0.15rem 0;
+  border-bottom: 1.5px dashed rgba(15,118,110,0.25);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+}
+
+.ruhsat-field input:focus {
+  outline: none;
+  border-bottom-color: #0f766e;
+  border-bottom-style: solid;
+}
+
+.ruhsat-field input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+  font-family: inherit;
+  letter-spacing: 0;
+}
+
+.ruhsat-field.wide {
+  flex: 2;
+}
+
+.ruhsat-field.full {
+  flex: unset;
+  width: 100%;
+}
+
+/* ============================================================
+   EHLİYET KARTI (Sürücü Belgesi)
+   ============================================================ */
+.ehliyet-card {
+  background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 50%, #fef2f2 100%);
+  border: 2px solid #9f1239;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(159,18,57,0.15), inset 0 1px 0 rgba(255,255,255,0.8);
+  position: relative;
+}
+
+.ehliyet-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239f1239' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ehliyet-header {
+  background: linear-gradient(135deg, #9f1239 0%, #be123c 50%, #e11d48 100%);
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ehliyet-header-flag {
+  width: 36px;
+  height: 26px;
+  background: #dc2626;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ehliyet-header-flag::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.ehliyet-header-text {
+  color: white;
+}
+
+.ehliyet-header-text h3 {
+  font-size: 0.65rem;
+  font-weight: 400;
+  opacity: 0.85;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.ehliyet-header-text h2 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.ehliyet-body {
+  padding: 1.2rem;
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ehliyet-photo {
+  width: 110px;
+  min-height: 140px;
+  background: rgba(255,255,255,0.6);
+  border: 2px dashed rgba(159,18,57,0.2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #9f1239;
+  font-size: 0.7rem;
+  text-align: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.ehliyet-photo svg {
+  opacity: 0.4;
+}
+
+.ehliyet-photo span {
+  opacity: 0.5;
+  font-weight: 500;
+}
+
+.ehliyet-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.ehliyet-row {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.ehliyet-field {
+  flex: 1;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(159,18,57,0.12);
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  transition: all 0.2s;
+}
+
+.ehliyet-field:focus-within {
+  border-color: #9f1239;
+  background: white;
+  box-shadow: 0 0 0 2px rgba(159,18,57,0.08);
+}
+
+.ehliyet-field-code {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: white;
+  background: #9f1239;
+  padding: 0.05rem 0.35rem;
+  border-radius: 3px;
+  margin-right: 0.35rem;
+  letter-spacing: 0.5px;
+}
+
+.ehliyet-field-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: #9f1239;
+  margin-bottom: 0.15rem;
+  display: flex;
+  align-items: center;
+}
+
+.ehliyet-field input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #0f172a;
+  padding: 0.15rem 0;
+  border-bottom: 1.5px dashed rgba(159,18,57,0.2);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+}
+
+.ehliyet-field input:focus {
+  outline: none;
+  border-bottom-color: #9f1239;
+  border-bottom-style: solid;
+}
+
+.ehliyet-field input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+  font-family: inherit;
+  letter-spacing: 0;
+}
+
+.ehliyet-field.full {
+  flex: unset;
+  width: 100%;
+}
+
+.ehliyet-bottom {
+  padding: 0 1.2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   DOCUMENT CARDS GRID (Ruhsat + Ehliyet side by side)
+   ============================================================ */
+.vl-doc-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================
+   SECTION CARDS (Kaza, Mağdur, Ücret bilgileri)
+   ============================================================ */
+.vl-section {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border: 1px solid #e2e8f0;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.vl-section-header {
+  padding: 0.85rem 1.2rem;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.vl-section-header svg {
+  color: #0f766e;
+}
+
+.vl-section-body {
+  padding: 1.2rem;
+}
+
+/* ============================================================
+   DASHBOARD - CASE LIST
+   ============================================================ */
+.vl-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.vl-stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid;
+}
+
+.vl-stat-card-label {
+  font-size: 0.78rem;
+  color: #64748b;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+
+.vl-stat-card-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.vl-stat-card-sub {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin-top: 0.2rem;
+}
+
+.vl-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.vl-filter-btn {
+  padding: 0.45rem 1rem;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.vl-filter-btn:hover {
+  border-color: #0d9488;
+  color: #0f766e;
+}
+
+.vl-filter-btn.active {
+  background: #0f766e;
+  color: white;
+  border-color: #0f766e;
+}
+
+.vl-cases-table-wrap {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border: 1px solid #e2e8f0;
+  overflow-x: auto;
+}
+
+.vl-cases-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.vl-cases-table thead th {
+  background: #f8fafc;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #475569;
+  border-bottom: 2px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.vl-cases-table tbody td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.vl-cases-table tbody tr {
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.vl-cases-table tbody tr:hover {
+  background: #f0fdfa;
+}
+
+.vl-case-no {
+  font-weight: 700;
+  color: #0f766e;
+  font-family: 'Courier New', monospace;
+}
+
+.vl-case-plate {
+  font-weight: 600;
+  color: #1e293b;
+  background: #f1f5f9;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  display: inline-block;
+}
+
+/* ===== STATUS BADGES ===== */
+.vl-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.vl-status.open { background: #dbeafe; color: #1e40af; }
+.vl-status.assigned { background: #e0e7ff; color: #3730a3; }
+.vl-status.applied { background: #fef3c7; color: #92400e; }
+.vl-status.inProgress { background: #fed7aa; color: #9a3412; }
+.vl-status.concluded { background: #d1fae5; color: #065f46; }
+.vl-status.closed { background: #f1f5f9; color: #475569; }
+
+/* ============================================================
+   CASE DETAIL - STAGE TIMELINE
+   ============================================================ */
+.vl-stage-timeline {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border: 1px solid #e2e8f0;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}
+
+.vl-stage-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 100px;
+  position: relative;
+  flex: 1;
+}
+
+.vl-stage-dot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #e2e8f0;
+  background: white;
+  color: #94a3b8;
+  transition: all 0.3s;
+  z-index: 2;
+}
+
+.vl-stage-dot.completed {
+  border-color: #10b981;
+  background: #10b981;
+  color: white;
+}
+
+.vl-stage-dot.current {
+  border-color: #0f766e;
+  background: #0f766e;
+  color: white;
+  box-shadow: 0 0 0 4px rgba(15,118,110,0.2);
+}
+
+.vl-stage-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #94a3b8;
+  text-align: center;
+  max-width: 90px;
+}
+
+.vl-stage-label.completed { color: #10b981; font-weight: 600; }
+.vl-stage-label.current { color: #0f766e; font-weight: 700; }
+
+.vl-stage-date {
+  font-size: 0.62rem;
+  color: #cbd5e1;
+}
+
+.vl-stage-connector {
+  flex: 1;
+  height: 3px;
+  background: #e2e8f0;
+  min-width: 20px;
+  margin-bottom: 2.5rem;
+}
+
+.vl-stage-connector.completed {
+  background: #10b981;
+}
+
+/* ============================================================
+   CASE DETAIL - INFO GRID
+   ============================================================ */
+.vl-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.vl-info-item {
+  margin-bottom: 0.6rem;
+}
+
+.vl-info-label {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vl-info-value {
+  font-size: 0.92rem;
+  color: #0f172a;
+  font-weight: 600;
+  margin-top: 0.1rem;
+}
+
+/* ============================================================
+   FINANCIAL SETTLEMENT
+   ============================================================ */
+.vl-settlement {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 2px solid #0f766e;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.vl-settlement-header {
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  padding: 1rem 1.5rem;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vl-settlement-body {
+  padding: 1.5rem;
+}
+
+.vl-settlement-section {
+  margin-bottom: 1.5rem;
+}
+
+.vl-settlement-section-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.vl-settlement-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.vl-settlement-row.input-row {
+  gap: 1rem;
+}
+
+.vl-settlement-row label {
+  color: #475569;
+  font-weight: 500;
+  flex: 1;
+}
+
+.vl-settlement-row .amount {
+  font-weight: 600;
+  color: #0f172a;
+  min-width: 120px;
+  text-align: right;
+}
+
+.vl-settlement-row .amount.positive {
+  color: #10b981;
+}
+
+.vl-settlement-row .amount.negative {
+  color: #ef4444;
+}
+
+.vl-settlement-row input {
+  width: 160px;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  color: #0f172a;
+  font-family: inherit;
+  text-align: right;
+  font-weight: 600;
+}
+
+.vl-settlement-row input:focus {
+  outline: none;
+  border-color: #0d9488;
+  box-shadow: 0 0 0 2px rgba(13,148,136,0.1);
+}
+
+.vl-settlement-divider {
+  border: none;
+  border-top: 2px dashed #e2e8f0;
+  margin: 0.75rem 0;
+}
+
+.vl-settlement-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-top: 3px solid #0f172a;
+  margin-top: 0.5rem;
+}
+
+.vl-settlement-total .amount {
+  font-size: 1.2rem;
+}
+
+.vl-settlement-split {
+  background: #f0fdfa;
+  border: 2px solid #99f6e4;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-top: 1rem;
+}
+
+.vl-settlement-split-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f766e;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vl-split-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(15,118,110,0.1);
+}
+
+.vl-split-row:last-child {
+  border-bottom: none;
+}
+
+.vl-split-row label {
+  font-weight: 600;
+  color: #334155;
+}
+
+.vl-split-row .amount {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.vl-client-payment {
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  border: 2px solid #93c5fd;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-top: 1rem;
+}
+
+.vl-client-payment-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 0.5rem;
+}
+
+.vl-client-payment-amount {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #1e3a8a;
+  margin-bottom: 0.3rem;
+}
+
+.vl-client-payment-iban {
+  font-size: 0.82rem;
+  color: #3b82f6;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+
+/* ============================================================
+   EXPENSE TRACKING
+   ============================================================ */
+.vl-expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.vl-expense-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.75rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.vl-expense-item-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.vl-expense-item-label {
+  font-weight: 500;
+  color: #334155;
+  font-size: 0.88rem;
+}
+
+.vl-expense-item-date {
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.vl-expense-item-amount {
+  font-weight: 700;
+  color: #ef4444;
+  font-size: 0.92rem;
+}
+
+.vl-expense-add-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.vl-expense-add-row input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-family: inherit;
+}
+
+.vl-expense-add-row input:focus {
+  outline: none;
+  border-color: #0d9488;
+}
+
+.vl-expense-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  margin-top: 0.5rem;
+  border-top: 2px solid #e2e8f0;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   LAWYER MANAGEMENT
+   ============================================================ */
+.vl-lawyer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.vl-lawyer-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border: 1px solid #e2e8f0;
+  padding: 1.25rem;
+  transition: box-shadow 0.2s;
+}
+
+.vl-lawyer-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.vl-lawyer-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.vl-lawyer-avatar {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.vl-lawyer-name {
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 1rem;
+}
+
+.vl-lawyer-baro {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.vl-lawyer-info-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: #475569;
+  margin-bottom: 0.35rem;
+}
+
+.vl-lawyer-info-row svg {
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+
+.vl-lawyer-stats {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.vl-lawyer-stat {
+  flex: 1;
+  text-align: center;
+}
+
+.vl-lawyer-stat-value {
+  font-weight: 700;
+  color: #0f766e;
+  font-size: 1.1rem;
+}
+
+.vl-lawyer-stat-label {
+  font-size: 0.68rem;
+  color: #94a3b8;
+}
+
+.vl-lawyer-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  margin-top: 0.75rem;
+}
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+.vl-empty {
+  text-align: center;
+  padding: 3rem;
+  color: #94a3b8;
+}
+
+.vl-empty svg {
+  margin-bottom: 1rem;
+  opacity: 0.3;
+}
+
+.vl-empty h3 {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.vl-empty p {
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1200px) {
+  .vl-doc-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .vl-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vl-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .vl-sidebar {
+    width: 220px;
+  }
+
+  .vl-main {
+    margin-left: 220px;
+    padding: 1rem;
+  }
+
+  .ehliyet-body {
+    flex-direction: column;
+  }
+
+  .ehliyet-photo {
+    width: 100%;
+    min-height: 60px;
+    flex-direction: row;
+  }
+
+  .ruhsat-row {
+    flex-direction: column;
+  }
+
+  .ehliyet-row {
+    flex-direction: column;
+  }
+
+  .vl-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .vl-sidebar {
+    position: relative;
+    width: 100%;
+  }
+
+  .vl-main {
+    margin-left: 0;
+  }
+
+  .vl-layout {
+    flex-direction: column;
+  }
+}

@@ -7,6 +7,7 @@ import {
   FileText,
   Settings,
   BarChart3,
+  Scale,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
@@ -47,6 +48,16 @@ export default function Sidebar() {
         ))}
       </nav>
 
+      <div style={{ padding: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+        <NavLink
+          to="/deger-kaybi"
+          className="sidebar-link"
+          style={{ background: 'rgba(94,234,212,0.1)', color: '#5eead4', borderRadius: '8px' }}
+        >
+          <Scale size={20} />
+          <span>Deger Kaybi</span>
+        </NavLink>
+      </div>
       <div className="sidebar-footer">
         <p>Basamak: {settings.currentStep}</p>
         <p>{settings.currentYear}</p>
