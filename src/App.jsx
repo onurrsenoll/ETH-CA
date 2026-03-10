@@ -12,6 +12,11 @@ import ValueLossDashboard from './valueLoss/pages/ValueLossDashboard';
 import ValueLossNewCase from './valueLoss/pages/ValueLossNewCase';
 import ValueLossCaseDetail from './valueLoss/pages/ValueLossCaseDetail';
 import ValueLossLawyers from './valueLoss/pages/ValueLossLawyers';
+import AccidentAnalysisLayout from './accidentAnalysis/AccidentAnalysisLayout';
+import AccidentAnalysisDashboard from './accidentAnalysis/pages/AccidentAnalysisDashboard';
+import NewAccidentAnalysis from './accidentAnalysis/pages/NewAccidentAnalysis';
+import AccidentAnalysisDetail from './accidentAnalysis/pages/AccidentAnalysisDetail';
+import './accidentAnalysis/AccidentAnalysis.css';
 import './App.css';
 
 export default function App() {
@@ -24,6 +29,13 @@ export default function App() {
           <Route path="yeni-dosya" element={<ValueLossNewCase />} />
           <Route path="dosya/:id" element={<ValueLossCaseDetail />} />
           <Route path="avukatlar" element={<ValueLossLawyers />} />
+        </Route>
+
+        {/* Kaza Analiz Modulu - Bagimsiz */}
+        <Route path="/kaza-analiz" element={<AccidentAnalysisLayout />}>
+          <Route index element={<AccidentAnalysisDashboard />} />
+          <Route path="yeni" element={<NewAccidentAnalysis />} />
+          <Route path="detay/:id" element={<AccidentAnalysisDetail />} />
         </Route>
 
         {/* Mevcut Sistem */}

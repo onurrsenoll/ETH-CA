@@ -8,6 +8,7 @@ import {
   Settings,
   BarChart3,
   Scale,
+  Car,
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
@@ -48,7 +49,7 @@ export default function Sidebar() {
         ))}
       </nav>
 
-      <div style={{ padding: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+      <div style={{ padding: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
         <NavLink
           to="/deger-kaybi"
           className="sidebar-link"
@@ -56,6 +57,14 @@ export default function Sidebar() {
         >
           <Scale size={20} />
           <span>Deger Kaybi</span>
+        </NavLink>
+        <NavLink
+          to="/kaza-analiz"
+          className="sidebar-link"
+          style={{ background: 'rgba(96,165,250,0.1)', color: '#60a5fa', borderRadius: '8px' }}
+        >
+          <Car size={20} />
+          <span>Kaza Analiz</span>
         </NavLink>
       </div>
       <div className="sidebar-footer">
